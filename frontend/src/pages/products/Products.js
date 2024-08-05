@@ -225,7 +225,7 @@ const Products = () => {
       </div>
 
       <div className="table-container">
-        <table className="products-table">
+        <table className="products-table responsive-table">
           <thead>
             <tr>
               <th>ID</th>
@@ -256,12 +256,14 @@ const Products = () => {
                     </div>
                   )}
                 </td>
-                <td>{product.name}</td>
-                <td>{product.description}</td>
-                <td>{product.price}</td>
-                <td>{product.category}</td>
-                <td>{new Date(product.createdAt).toLocaleDateString()}</td>
-                <td>
+                <td data-label="name">{product.name}</td>
+                <td data-label="description">{product.description}</td>
+                <td data-label="price">{product.price}</td>
+                <td data-label="category">{product.category}</td>
+                <td data-label="createdAt">
+                  {new Date(product.createdAt).toLocaleDateString()}
+                </td>
+                <td data-label="available">
                   <span
                     className={`status ${
                       product.available ? "available" : "not-available"
@@ -270,7 +272,7 @@ const Products = () => {
                     {product.available ? "Yes" : "No"}
                   </span>
                 </td>
-                <td>
+                <td data-label="actions">
                   <button onClick={() => deleteProduct(product.id)}>
                     Delete
                   </button>

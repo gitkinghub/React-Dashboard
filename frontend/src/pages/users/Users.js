@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./users.css";
+import "../products/products.css";
+// import { products } from './../products/Products';
+
 
 const ITEMS_PER_PAGE = 10;
 
@@ -211,7 +214,7 @@ const Users = () => {
         </div>
       </div>
 
-      <div className="table-container">
+      <div className="table-container responsive-table">
         <table className="users-table">
           <thead>
             <tr>
