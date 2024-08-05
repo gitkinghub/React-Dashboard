@@ -1,0 +1,29 @@
+:root {
+  --sm: 480px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1200px;
+  --xxl: 1400px;
+}
+
+/* Base styles for mobile first approach */
+
+@media screen and (min-width: 481px) {
+  /* Styles for screens larger than 480px */
+}
+
+@media screen and (min-width: 769px) {
+  /* Styles for screens larger than 768px */
+}
+
+@media screen and (min-width: 1025px) {
+  /* Styles for screens larger than 1024px */
+}
+
+@media screen and (min-width: 1201px) {
+  /* Styles for screens larger than 1200px */
+}
+
+@media screen and (min-width: 1401px) {
+  /* Styles for screens larger than 1400px */
+}

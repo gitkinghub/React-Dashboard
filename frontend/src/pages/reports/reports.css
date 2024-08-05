@@ -1,0 +1,104 @@
+/* reports.css */
+
+/* Container for the report */
+.reports-container {
+  padding: 20px;
+  background-color: var(--soft-bg);
+}
+
+/* Header with print button */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.print-button {
+  background-color: var(--dark-bg);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.print-button:hover {
+  background-color: #0056b3;
+}
+
+/* Basic styling for the table */
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reports-table th,
+.reports-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.reports-table th {
+  background-color: var(--soft-bg);
+  text-align: left;
+}
+
+.reports-table img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.verified {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.not-verified {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Print styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .reports-container, .reports-container * {
+    visibility: visible;
+  }
+
+  .reports-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

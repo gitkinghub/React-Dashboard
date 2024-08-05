@@ -1,0 +1,68 @@
+@import url("../../variables.css");
+@import url("../../responsive.css");
+
+.menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu.closed {
+  transform: translateX(-100%);
+}
+
+.menu .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.menu .item .title {
+  font-size: 12px;
+  font-weight: 200;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.menu .item .listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.listItemTitle {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu .item .listItem:hover {
+  background-color: var(--soft-bg);
+}
+
+/* Toggle button for menu */
+.menu-toggle {
+  position: static;
+  top: 50px;
+  left: 150px;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  z-index: 1;
+}
+
+/* Media query for large screens (lg) */
+@media screen and (min-width: 1024px) {
+  .menu {
+    transform: translateX(0);
+  }
+  .menu-toggle {
+    
+  }
+}

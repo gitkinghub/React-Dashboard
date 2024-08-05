@@ -1,0 +1,329 @@
+@import url("../../variables.css");
+
+.users-container {
+  padding: 15px 10px;
+  background-color: var(--soft-bg);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-user-button {
+  padding: 8px 15px;
+  background-color: var(--main-bg);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+h1 {
+  color: #fff;
+  /* text-align: center; */
+  margin-bottom: 5px;
+}
+
+/* Search container styling */
+.filters{
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-bottom: 2px solid #ccc;
+}
+
+.search-input {
+  border: none;
+  /* border-bottom: 2px solid #ccc; */
+  padding: 5px 30px 5px 5px;
+  font-size: 16px;
+  outline: none;
+  width: 200px;
+  background-color: var(--soft-bg);
+}
+
+/* .search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  color: #ccc;
+  pointer-events: none;
+} */
+
+/* Filter container styling */
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.filter-select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: var(--main-bg);
+  color: var(--soft-color);
+  cursor: pointer;
+}
+
+
+.table-container {
+  flex: 1;
+  overflow: auto; /* Allow scrolling if needed */
+  background-color: #ffffff;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed; /* Ensure fixed table layout */
+}
+
+.users-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  z-index: 1;
+}
+
+.users-table th,
+.users-table td {
+  padding: 15px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ensure text overflow is handled */
+}
+
+.users-table th {
+  color: #495057;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.users-table td {
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+  font-size: 14px;
+}
+
+.users-table tbody {
+  display: block;
+  overflow-y: auto;
+  height: calc(100vh - 200px);
+}
+
+.users-table thead,
+.users-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Ensure fixed table layout */
+}
+
+/* Column width adjustments */
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) { width: 5%; }  /* ID */
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) { width: 8%; }  /* Avatar */
+.users-table th:nth-child(3),
+.users-table td:nth-child(3),
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) { width: 12%; } /* First Name, Last Name */
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) { width: 20%; } /* Email */
+.users-table th:nth-child(6),
+.users-table td:nth-child(6) { width: 15%; } /* Phone */
+.users-table th:nth-child(7),
+.users-table td:nth-child(7) { width: 12%; } /* Created At */
+.users-table th:nth-child(8),
+.users-table td:nth-child(8) { width: 10%; } /* Verified */
+.users-table th:nth-child(9),
+.users-table td:nth-child(9) { width: 15%; } /* Actions */
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--soft-color);
+  color: var(--dark-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.verified {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.not-verified {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  color: var(--soft-color);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pagination.export-button{
+  color: var(--soft-color);
+  background-color: var(--soft-bg);
+}
+
+.pagination button {
+  padding: 8px 15px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-weight: 600;
+}
+
+.edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: var(--dark-color);
+}
+
+.edit-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-modal-content h2 {
+  margin-top: 0;
+}
+
+.edit-modal-content form div {
+  margin-bottom: 15px;
+}
+
+.edit-modal-content form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.edit-modal-content form input,
+.edit-modal-content form select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.edit-modal-content form button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-modal-content form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-modal-content form button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .users-table th:nth-child(3),
+  .users-table td:nth-child(3),
+  .users-table th:nth-child(4),
+  .users-table td:nth-child(4),
+  .users-table th:nth-child(6),
+  .users-table td:nth-child(6) {
+    display: none;
+  }
+
+  .users-table th:nth-child(5),
+  .users-table td:nth-child(5) {
+    width: 25%;
+  }
+
+  .users-table th:nth-child(7),
+  .users-table td:nth-child(7),
+  .users-table th:nth-child(8),
+  .users-table td:nth-child(8) {
+    width: 10%;
+  }
+}

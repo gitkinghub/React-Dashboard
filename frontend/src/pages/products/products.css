@@ -1,0 +1,236 @@
+/* src/products.css */
+.products-container {
+  padding: 15px 10px;
+  background-color: var(--soft-bg);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-product-button {
+  padding: 8px 15px;
+  background-color: var(--main-bg);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.table-container {
+  flex: 1;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.products-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  z-index: 1;
+}
+
+.products-table th,
+.products-table td {
+  padding: 15px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.products-table th {
+  color: #495057;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.products-table td {
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+  font-size: 14px;
+}
+
+.products-table tbody {
+  display: block;
+  overflow-y: auto;
+  height: calc(100vh - 200px);
+}
+
+.products-table thead,
+.products-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Column width adjustments */
+.products-table th:nth-child(1),
+.products-table td:nth-child(1) { width: 5%; }  /* ID */
+.products-table th:nth-child(2),
+.products-table td:nth-child(2) { width: 8%; }  /* Image */
+.products-table th:nth-child(3),
+.products-table td:nth-child(3) { width: 12%; } /* Name */
+.products-table th:nth-child(4),
+.products-table td:nth-child(4) { width: 20%; } /* Description */
+.products-table th:nth-child(5),
+.products-table td:nth-child(5) { width: 10%; } /* Price */
+.products-table th:nth-child(6),
+.products-table td:nth-child(6) { width: 10%; } /* Category */
+.products-table th:nth-child(7),
+.products-table td:nth-child(7) { width: 12%; } /* Created At */
+.products-table th:nth-child(8),
+.products-table td:nth-child(8) { width: 8%; }  /* Available */
+.products-table th:nth-child(9),
+.products-table td:nth-child(9) { width: 15%; } /* Actions */
+
+.product-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.image-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.available {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.not-available {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pagination button {
+  padding: 8px 15px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-weight: 600;
+}
+
+/* Modal Styles */
+.edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.edit-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-modal-content h2 {
+  margin-top: 0;
+}
+
+.edit-modal-content form div {
+  margin-bottom: 15px;
+}
+
+.edit-modal-content form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.edit-modal-content form input,
+.edit-modal-content form select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.edit-modal-content form button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-modal-content form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-modal-content form button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
